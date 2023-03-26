@@ -1,0 +1,140 @@
+body {
+  width: 100%;
+  font-family: sans-serif;
+}
+
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(0deg, rgba(34, 193, 195, 0) 59%, rgb(255, 255, 255) 100%, rgb(255, 255, 255) 50%), url("../img/head_bg.jpg") no-repeat 80%/cover;
+  min-height: 80vh;
+}
+
+.nav {
+  position: relative;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #5c5c5c;
+  border-radius: 20px;
+  border: 3px solid transparent;
+  transition: 0.3s;
+}
+.link:hover {
+  border: 3px solid #f45c00;
+  border-radius: 20px;
+}
+
+.list__link {
+  display: block;
+  padding: 5px 15px;
+}
+
+.burger {
+  cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .burger {
+    padding-top: 2rem;
+  }
+}
+.burger .burger__line {
+  display: none;
+  width: 30px;
+  height: 2px;
+  background: #000;
+  position: relative;
+  z-index: 1000;
+  top: -1rem;
+  left: -1rem;
+}
+.burger .burger__line::after, .burger .burger__line::before {
+  content: "";
+  width: 30px;
+  height: 2px;
+  background: #000;
+  position: absolute;
+  left: 0;
+  transition-duration: 0.3s;
+  z-index: 1000;
+}
+.burger .burger__line::after {
+  top: 8px;
+}
+.burger .burger__line::before {
+  top: -8px;
+}
+@media screen and (max-width: 600px) {
+  .burger .burger__line {
+    display: block;
+  }
+}
+
+.nav__list {
+  position: -webkit-sticky;
+  position: sticky;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  top: 2rem;
+  transition-duration: 0.25s;
+}
+@media screen and (max-width: 600px) {
+  .nav__list {
+    position: fixed;
+    opacity: 0;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    min-width: 250px;
+    background: #eee;
+    border-bottom-right-radius: 20px;
+    padding: 4rem 1rem;
+  }
+  .nav__list .list__link {
+    color: #5c5c5c;
+  }
+}
+
+.menu__btn {
+  display: block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+#main__menu {
+  opacity: 0;
+}
+
+#main__menu:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+  background: #f45c00;
+}
+
+#main__menu:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+  background: #f45c00;
+}
+
+#main__menu:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+  background: #f45c00;
+}
+
+#main__menu:checked ~ .nav__list {
+  opacity: 1;
+  left: 0;
+  top: 0;
+}/*# sourceMappingURL=style.css.map */

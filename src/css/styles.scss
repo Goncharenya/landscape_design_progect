@@ -1,0 +1,179 @@
+$color__white: #ffffff;
+$color_light_green: #ebf4e3;
+$color_white: #ffffff;
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url("../fonts/OpenSans-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url("../fonts/OpenSans-Medium.ttf");
+    font-weight: 600;
+    font-style: normal;
+    font-variant: normal;
+    font-display: auto;
+}
+
+body {
+    font-family: "OpenSans", "Arial", sans-serif;
+    width: 100%;
+    background: $color_light_green;
+}
+
+.wrap {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    background: url("../img/slider_main.png") no-repeat center/cover;
+    height: 40rem;
+    width: 100%;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: auto;
+        background: url("../img/down.svg");
+        bottom: 0;
+
+    }
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    text-align: right;
+}
+
+.list {
+    list-style: none;
+
+}
+
+.header__list {
+    display: flex;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.list__link {
+    color: $color__white;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+
+    &:hover {
+        border: 2px solid $color__white;
+        border-radius: 20px;
+    }
+}
+
+//------------Burger
+
+.burger {
+    cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+    .burger {
+        padding-top: 2rem;
+    }
+}
+.burger .burger__line {
+    display: none;
+    width: 30px;
+    height: 2px;
+    background: $color__white;
+    position: relative;
+    z-index: 1000;
+    top: -1rem;
+    left: -1rem;
+}
+.burger .burger__line::after, .burger .burger__line::before {
+    content: "";
+    width: 30px;
+    height: 2px;
+    background: $color__white;
+    position: absolute;
+    left: 0;
+    transition-duration: 0.3s;
+    z-index: 1000;
+}
+.burger .burger__line::after {
+    top: 8px;
+}
+.burger .burger__line::before {
+    top: -8px;
+}
+@media screen and (max-width: 600px) {
+    .burger .burger__line {
+        display: block;
+    }
+}
+
+.header__list {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    top: 2rem;
+    transition-duration: 0.25s;
+}
+@media screen and (max-width: 600px) {
+    .header__list {
+        position: fixed;
+        opacity: 0;
+        flex-direction: column;
+        top: 2rem;
+        right: 0;
+        min-width: 250px;
+        border-bottom-right-radius: 20px;
+        padding: 4rem 1rem;
+    }
+}
+
+.menu__btn {
+    display: block;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+#main__menu {
+    opacity: 0;
+}
+
+#main__menu:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+    background: $color__white;
+}
+
+#main__menu:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+    background: $color__white;
+}
+
+#main__menu:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+    background: $color__white;
+}
+
+#main__menu:checked ~ .header__list {
+    opacity: 1;
+    right: 0;
+    text-align: right;
+    top: 2rem;
+}

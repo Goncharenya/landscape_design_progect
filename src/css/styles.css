@@ -214,4 +214,27 @@ body {
   top: 2rem;
 }
 
+.about {
+  background: #ffffff;
+}
+
+.btn {
+  display: block;
+  border-radius: 50px;
+  border: 2px solid #79b33f;
+  background: transparent;
+  padding: 10px 25px;
+  color: #79b33f;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__logo {
+  background: url("../img/logo_footer.jpg") no-repeat center/cover;
+  width: 120px;
+  height: 120px;
+}
+
 /*# sourceMappingURL=styles.css.map */

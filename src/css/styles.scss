@@ -1,6 +1,7 @@
 $color__white: #ffffff;
 $color_light_green: #ebf4e3;
 $color_white: #ffffff;
+$basic_green: #79b33f;
 
 @font-face {
     font-family: 'OpenSans';
@@ -42,7 +43,7 @@ body {
 
     .header__bottom-bg {
         position: absolute;
-        background: url("../img/bg_green_hren.png")no-repeat center/cover;
+        background: url("../img/bg_green_hren.png") no-repeat center/cover;
         bottom: -1px;
         left: -1px;
         width: 102%;
@@ -73,6 +74,7 @@ body {
 
     }
 }
+
 .list {
     list-style: none;
     padding: 0;
@@ -112,6 +114,7 @@ body {
 .burger {
     cursor: pointer;
 }
+
 @media screen and (max-width: 600px) {
     .burger {
         //padding-top: 2rem;
@@ -137,6 +140,7 @@ body {
     top: -1rem;
     left: -1rem;
 }
+
 .burger .burger__line::after, .burger .burger__line::before {
     content: "";
     width: 30px;
@@ -147,12 +151,15 @@ body {
     transition-duration: 0.3s;
     z-index: 1000;
 }
+
 .burger .burger__line::after {
     top: 8px;
 }
+
 .burger .burger__line::before {
     top: -8px;
 }
+
 @media screen and (max-width: 600px) {
     .burger .burger__line {
         display: block;
@@ -168,6 +175,7 @@ body {
     top: 2rem;
     transition-duration: 0.25s;
 }
+
 @media screen and (max-width: 600px) {
     .header__list {
         position: fixed;
@@ -218,4 +226,33 @@ body {
     right: 0;
     text-align: right;
     top: 2rem;
+}
+
+//--------about
+
+.about {
+    background: $color__white;
+}
+
+//----------btn
+
+.btn {
+    display: block;
+    border-radius: 50px;
+    border: 2px solid $basic_green;
+    background: transparent;
+    padding: 10px 25px;
+    color: $basic_green;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s;
+}
+
+//----------footer
+.footer__logo {
+    background: url("../img/logo_footer.jpg")no-repeat center/cover;
+    width: 120px;
+    height: 120px;
+
 }

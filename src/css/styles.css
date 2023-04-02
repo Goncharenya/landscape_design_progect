@@ -1,5 +1,13 @@
 @font-face {
   font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Light.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-variant: normal;
+  font-display: auto;
+}
+@font-face {
+  font-family: "OpenSans";
   src: url("../fonts/OpenSans-Regular.ttf");
   font-weight: 400;
   font-style: normal;
@@ -14,6 +22,19 @@
   font-variant: normal;
   font-display: auto;
 }
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("../fonts/SourceSansPro.ttf");
+  font-weight: 100;
+  font-style: normal;
+  font-variant: normal;
+  font-display: auto;
+}
+._active {
+  border: 4px solid #ffffff;
+  border-radius: 20px;
+}
+
 body {
   font-family: "OpenSans", "Arial", sans-serif;
   width: 100%;
@@ -39,9 +60,8 @@ body {
 .header .header__bottom-bg {
   position: absolute;
   background: url("../img/bg_green_hren.png") no-repeat center/cover;
-  bottom: -1px;
+  bottom: -50px;
   left: -1px;
-  width: 102%;
   height: 163px;
   right: -2px;
   z-index: 1000;
@@ -87,10 +107,15 @@ body {
 .list__link {
   color: #ffffff;
   padding: 5px 10px;
-  border: 2px solid transparent;
+  border: 4px solid transparent;
+  border-radius: 20px;
 }
 .list__link:hover {
-  border: 2px solid #ffffff;
+  border: 4px solid #ffffff;
+}
+
+._active {
+  border: 4px solid #ffffff;
   border-radius: 20px;
 }
 
@@ -214,14 +239,108 @@ body {
   top: 2rem;
 }
 
+.icon-container {
+  padding: 2rem 0;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 850px) {
+  .icon-box {
+    flex-wrap: wrap;
+  }
+}
+.icon-box .icon-box__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6rem 2rem 0;
+}
+
+.icon-box__item:nth-child(2) {
+  background: url("../img/people_grass.jpg") no-repeat 50% 20%;
+  border-right: 1px solid #79b33f;
+  border-left: 1px solid #79b33f;
+}
+@media screen and (max-width: 850px) {
+  .icon-box__item:nth-child(2) {
+    border-right: 1px solid transparent;
+  }
+}
+@media screen and (max-width: 545px) {
+  .icon-box__item:nth-child(2) {
+    border-top: 1px solid #79b33f;
+    border-left: 1px solid transparent;
+    border-right: 1px solid #79b33f;
+  }
+}
+@media screen and (max-width: 521px) {
+  .icon-box__item:nth-child(2) {
+    border-right: 1px solid transparent;
+  }
+}
+
+.icon-box__item:first-child {
+  background: url("../img/icon_tree.jpg") no-repeat 50% 20%;
+}
+
+.icon-box__item:last-child {
+  background: url("../img/flower_scissors.jpg") no-repeat 50% 20%;
+}
+@media screen and (max-width: 850px) {
+  .icon-box__item:last-child {
+    border-top: 1px solid #79b33f;
+  }
+}
+
+.icon-title {
+  text-transform: uppercase;
+  color: #333b46;
+  font-weight: 100;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 850px) {
+  .icon-title {
+    font-size: 1.25rem;
+  }
+}
+
+.icon-sub_title {
+  color: #333b46;
+  font-weight: 100;
+  text-align: center;
+}
+
 .about {
   background: #ffffff;
+}
+.about .btn {
+  margin: auto;
+}
+
+.about__content {
+  padding: 7rem 1rem 5rem;
+}
+
+.title_h1 {
+  text-transform: uppercase;
+  color: #3f6a1a;
+  margin-bottom: 3rem;
+}
+
+.about__text {
+  line-height: 2;
+  color: #5c6068;
+  margin-bottom: 5rem;
 }
 
 .btn {
   display: block;
   border-radius: 50px;
-  border: 2px solid #79b33f;
+  border: 4px solid #79b33f;
   background: transparent;
   padding: 10px 25px;
   color: #79b33f;
@@ -231,10 +350,38 @@ body {
   transition: 0.3s;
 }
 
+.footer__content {
+  padding: 7rem 1rem 5rem;
+}
+
 .footer__logo {
   background: url("../img/logo_footer.jpg") no-repeat center/cover;
   width: 120px;
   height: 120px;
+  margin-right: 3rem;
+}
+
+.footer__title {
+  font-family: SourceSansPro, sans-serif;
+  text-transform: uppercase;
+  color: #333b46;
+  text-align: center;
+}
+
+.footer__sub-title {
+  color: #81868e;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer__logo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  padding-top: 5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
